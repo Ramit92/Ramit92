@@ -1,0 +1,36 @@
+from random import shuffle
+
+def shuffle_list(mlist,reward_list):
+        
+    shuffle(mlist)
+    shuffle(reward_list)
+    return mlist, reward_list
+
+def user_guess():
+    
+    while True:
+        guess = input('Please enter a guess with 0, 1 or 2 :')
+        if guess not in ['0','1','2']:
+            print('Try again!!')
+        else:
+            break
+            
+    return int(guess)
+
+def check_guess(mlist,guess,reward):
+    
+    if mlist[guess] == '0':
+        print('Correct!! You won a ' + rewards_list[guess])
+        print(mlist)
+    else:
+        print('Incorrect!!')
+        print('The correct position is :')
+        print(mlist)
+
+mlist = ['0',' ',' ']
+rewards_list = ['Teddy Bear','Nerf Gun','Frisbee']
+shuffle_list(mlist,rewards_list)
+#print(mlist)
+guess = user_guess()
+#print(guess)
+check_guess(mlist,guess,rewards_list)
